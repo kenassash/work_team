@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div id="main-wrapper">
+        <div class="site-wrapper-reveal">
+            <div class="blog-details-wrapper section-space--ptb_80">
+                <div class="container">
+                    {% if  messages %}
+                        <div class="alert
+                        {% if messages.level == 20 %}
+                            alert-success
+                        {% else %}
+                            alert-warning
+                        {% endif %}
+                        alert-dismissible fade show" role="alert" style="margin-top: 50px;">
+                            {% if messages %}
+                                {% for mes in messages %}
+                                    {{ mes }}
+                                {% endfor %}
+                            {% endif %}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endif %}
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title text-center section-border-bottom">
+                                <h2>{{ title }}</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                   {% include 'articles/includes/table_notfications.html' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block script %}
+    <script>
+        function read_notification(_url, _notification_guid, _flag_all_read ) {
+            $.ajax({
+                    type: "POST",
+                    dataType: 'json',
+                    url: _url,
+                    data: {
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                        'notification_guid': _notification_guid,
+                        'flag_all_read': _flag_all_read
+                    },
+                    success:
+                        function callback(response) {
+                            if (response.result === 1) {
+                                document.getElementById(response.object).innerHTML = response.data
+                            }
+                            if (response.result === 2) {
+                                 $(document).ajaxStop(function(){
+                                    window.location.reload();
+                                })
+                            }
+                        }
+                }
+            );
+        }
+    </script>
+{% endblock %}

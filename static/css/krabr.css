@@ -1,0 +1,133 @@
+input#id_profile_image {
+    border: none;
+    display: none;
+}
+
+input#id_first_name, #id_last_name, #id_email, #id_username, #id_profile_image, #id_birthday, #id_about, #id_phone_number {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 1px 20px;
+    color: #000000;
+    line-height: 47px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+}
+
+.time_comment {
+    color: #ffc4a0;
+}
+
+#id_article_body_iframe, #id_body_iframe, .krabr_border {
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.article_center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.parent-notification {
+    position: relative;
+}
+
+.link_notification {
+    color: #548eb0;
+}
+.link_notification_disable {
+    color: #7c7a75;
+}
+.btn_notification_ajax {
+    width:  45px;
+    height: 45px;
+    margin: 0;
+    padding:0;
+    border: 0;
+    color: transparent;
+}
+
+.btn_notification_active {
+    height: 60px;
+    width: 60px;
+    border: none;
+    background: transparent url('../images/icon-crab-active.svg') no-repeat center top;
+    cursor: pointer;
+}
+
+.btn_notification_disable {
+    height: 60px;
+    width: 60px;
+    border: none;
+    background: transparent url('../images/icon-crab-disable.svg') no-repeat center top;
+    cursor: pointer;
+}
+
+.icon-bell-notification {
+    position: absolute;
+    width: 24px;
+    height: 21px;
+    top: -11px;
+    fill: #d4966f;
+    right: -10px;
+}
+
+.button_pressed {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 500000px;
+    margin: 10px;
+    background-color: #000000;
+    border: 2px solid #000000;
+    color: #ffffff;
+}
+
+.preview_img {
+    height: 400px;
+    object-fit: scale-down;
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.team-logo {
+    max-width: 50%;
+}
+
+.button-link:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.form-checkbox-input {
+  width: 1em;
+  height: 1em;
+  border-radius: 0.25em;
+  appearance: none;
+}
+
+.form-checkbox-input:checked {
+    border: 1px;
+    background-color: #ffc4a0;
+    border-color: #ffc4a0;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e")
+}
+
+.form-checkbox-input:focus {
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+
+.filling-full {
+    flex: 1 0 auto;
+}
